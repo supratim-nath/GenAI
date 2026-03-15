@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Meme Generator | Laugh Faster</title>
+    <!-- Modern Font: Outfit & Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="background-effects">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <div class="container glass-panel">
+        <header>
+            <div class="logo">
+                <i class="fa-solid fa-face-laugh-squint gradient-text"></i>
+                <h1 class="gradient-text">AI Meme Gen</h1>
+            </div>
+            <p>Upload a pic, select a vibe, let AI do the rest.</p>
+        </header>
+
+        <main>
+            <div class="layout-grid">
+                <!-- Left Column: Controls -->
+                <div class="controls-section glass-card">
+                    
+                    <!-- API Key removed to use default key -->
+                    
+                    <div class="input-group">
+                        <label for="humorStyle"><i class="fa-solid fa-masks-theater"></i> Humor Style</label>
+                        <div class="select-wrapper">
+                            <select id="humorStyle">
+                                <option value="Sarcastic">Sarcastic</option>
+                                <option value="Dark Humor">Dark Humor</option>
+                                <option value="Wholesome">Wholesome</option>
+                                <option value="Gen Z">Gen Z (Brainrot/Deepfried)</option>
+                                <option value="Dad Jokes">Dad Jokes</option>
+                            </select>
+                            <i class="fa-solid fa-chevron-down dropdown-icon"></i>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label><i class="fa-solid fa-image"></i> Upload Image</label>
+                        <div class="upload-dropzone" id="dropzone">
+                            <input type="file" id="imageInput" accept="image/jpeg, image/png, image/jpg" hidden>
+                            <div class="upload-content">
+                                <i class="fa-solid fa-cloud-arrow-up cloud-icon"></i>
+                                <h3>Drag & Drop</h3>
+                                <span>or click to browse</span>
+                            </div>
+                            <!-- Preview Area -->
+                            <img id="imagePreview" src="" alt="Preview" style="display: none;">
+                            <button id="removeImageBtn" class="icon-btn" style="display: none;"><i class="fa-solid fa-xmark"></i></button>
+                        </div>
+                    </div>
+
+                    <button id="generateBtn" class="primary-btn" disabled>
+                        <span>Generate Memes</span>
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    </button>
+                    <div id="loadingIndicator" class="loading-state" style="display: none;">
+                        <span class="loader"></span>
+                        <p>AI is thinking of something funny...</p>
+                    </div>
+
+                </div>
+
+                <!-- Right Column: Results -->
+                <div class="results-section glass-card">
+                    <div class="results-header">
+                        <h2><i class="fa-solid fa-bolt"></i> Results</h2>
+                    </div>
+                    
+                    <div id="resultsContainer" class="empty-state">
+                        <div class="placeholder-icon"><i class="fa-regular fa-image"></i></div>
+                        <p>Your hilarious captions will appear here.</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="/static/script.js"></script>
+</body>
+</html>
